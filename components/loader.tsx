@@ -6,6 +6,9 @@ const Loader = () => {
       <div className="w-10 h-10 relative animate-spin">
         <Image alt="logo" fill src="/logo.png" />
       </div>
+      {/* TODO: animation changing for verb [thinking, imagining, creating ...] */}
+
+      {/* TODO: first time run may take 10-15mins for music */}
       <p className="text-sm text-muted-foreground">Wingman is thinking...</p>
     </div>
   );
