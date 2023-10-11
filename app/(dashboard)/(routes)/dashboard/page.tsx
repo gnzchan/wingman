@@ -7,7 +7,6 @@ import {
   ImageIcon,
   VideoIcon,
   Music,
-  Code,
 } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
@@ -41,13 +40,6 @@ const tools = [
     color: "text-emerald-500",
     bgColor: "bg-emerald-500/10",
     href: "/music",
-  },
-  {
-    label: "Code Generation",
-    icon: Code,
-    color: "text-green-700",
-    bgColor: "bg-green-700/10",
-    href: "/code",
   },
 ];
 

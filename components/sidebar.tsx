@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Poppins } from "next/font/google";
 import {
-  Code,
   ImageIcon,
   LayoutDashboard,
   MessageSquare,
@@ -48,12 +47,6 @@ const routes = [
     icon: Music,
     href: "/music",
     color: "text-emerald-500",
-  },
-  {
-    label: "Code Generation",
-    icon: Code,
-    href: "/code",
-    color: "text-green-700",
   },
   {
     label: "Settings",
