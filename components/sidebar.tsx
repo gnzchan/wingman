@@ -16,10 +16,6 @@ import {
 import FreeCounter from "@/components/free-counter";
 import { cn } from "@/lib/utils";
 
-interface SideBarProps {
-  apiLimitCount: number;
-}
-
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
 const routes = [
@@ -60,7 +56,7 @@ const routes = [
   },
 ];
 
-const Sidebar: React.FC<SideBarProps> = ({ apiLimitCount }) => {
+const Sidebar = () => {
   const pathname = usePathname();
 
   return (
@@ -94,7 +90,7 @@ const Sidebar: React.FC<SideBarProps> = ({ apiLimitCount }) => {
           ))}
         </div>
       </div>
-      <FreeCounter apiLimitCount={apiLimitCount} />
+      <FreeCounter />
     </div>
   );
 };
