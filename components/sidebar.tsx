@@ -13,7 +13,12 @@ import {
   VideoIcon,
 } from "lucide-react";
 
+import FreeCounter from "@/components/free-counter";
 import { cn } from "@/lib/utils";
+
+interface SideBarProps {
+  apiLimitCount: number;
+}
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
@@ -55,7 +60,7 @@ const routes = [
   },
 ];
 
-const Sidebar = () => {
+const Sidebar: React.FC<SideBarProps> = ({ apiLimitCount }) => {
   const pathname = usePathname();
 
   return (
@@ -89,6 +94,7 @@ const Sidebar = () => {
           ))}
         </div>
       </div>
+      <FreeCounter apiLimitCount={apiLimitCount} />
     </div>
   );
 };
