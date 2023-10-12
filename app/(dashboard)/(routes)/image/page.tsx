@@ -2,13 +2,13 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import * as z from "zod";
 import { ExternalLink, ImageIcon } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { saveAs } from "file-saver";
 
 import Heading from "@/components/heading";
 import Loader from "@/components/loader";
@@ -57,8 +57,9 @@ const ImagePage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         onOpen();
+      } else {
+        toast.error("Something went wrong");
       }
-      console.log(error);
     } finally {
       router.refresh();
     }

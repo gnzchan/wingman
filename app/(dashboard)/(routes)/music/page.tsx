@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import * as z from "zod";
 import { Music } from "lucide-react";
@@ -17,11 +18,6 @@ import { Button } from "@/components/ui/button";
 import { useProModal } from "@/hooks/use-pro-modal";
 
 import { formSchema } from "./constants";
-
-interface Message {
-  role: string;
-  content: string;
-}
 
 const MusicPage = () => {
   const router = useRouter();
@@ -49,6 +45,8 @@ const MusicPage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         onOpen();
+      } else {
+        toast.error("Something went wrong");
       }
     } finally {
       router.refresh();
