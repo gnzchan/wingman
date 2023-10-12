@@ -2,13 +2,19 @@
 
 import { useRef } from "react";
 
-import { useApiLimitCount } from "@/hooks/use-api-limit-count";
+import { useStore } from "@/hooks/use-store";
 
-const StoreInitializer = ({ count }: { count: number }) => {
+const StoreInitializer = ({
+  count,
+  isPro,
+}: {
+  count: number;
+  isPro: boolean;
+}) => {
   const initialized = useRef(false);
 
   if (!initialized.current) {
-    useApiLimitCount.setState({ count });
+    useStore.setState({ count, isPro });
     initialized.current = true;
   }
 

@@ -5,19 +5,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { MAX_FREE_COUNTS } from "@/constants";
-import { useApiLimitCount } from "@/hooks/use-api-limit-count";
+import { useStore } from "@/hooks/use-store";
 import { useProModal } from "@/hooks/use-pro-modal";
 
 const FreeCounter = () => {
   const [isMounted, setIsMounted] = useState(false);
-  const { count } = useApiLimitCount();
+  const { count, isPro } = useStore();
   const { onOpen } = useProModal();
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) {
+  if (!isMounted || isPro) {
     return null;
   }
 
