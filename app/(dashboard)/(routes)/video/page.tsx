@@ -45,8 +45,11 @@ const VideoPage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         onOpen();
+      } else if (error?.response?.status === 504) {
+        toast.error(
+          "This app is deployed on a free plan. We can't accomodate the request. Please contact admin"
+        );
       } else {
-        console.log(error);
         toast.error("Something went wrong");
       }
     } finally {
