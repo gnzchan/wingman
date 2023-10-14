@@ -45,12 +45,10 @@ const MusicPage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         onOpen();
-      } else if (error?.response?.status === 504) {
+      } else {
         toast.error(
           "This app is deployed on a free plan. We can't accomodate the request. Please contact admin"
         );
-      } else {
-        toast.error("Something went wrong");
       }
     } finally {
       router.refresh();
