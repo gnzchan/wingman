@@ -59,7 +59,7 @@ const MusicPage = () => {
     <div>
       <Heading
         title="Music Generation"
-        description="Turn your prompt into music."
+        description="Transform your words into melodies."
         icon={Music}
         iconColor="text-emerald-500"
         bgColor="bg-emerald-500/10"
@@ -99,7 +99,9 @@ const MusicPage = () => {
               <Loader />
             </div>
           )}
-          {!music && !isLoading && <Empty label="No music generated" />}
+          {!music && !isLoading && (
+            <Empty label="No music generated" src="/empty/music.svg" />
+          )}
           {music && (
             <audio controls className="w-full mt-8">
               <source src={music} />

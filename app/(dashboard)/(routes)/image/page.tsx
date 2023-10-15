@@ -71,7 +71,7 @@ const ImagePage = () => {
     <div>
       <Heading
         title="Image Generation"
-        description="Turn your prompt into an image."
+        description="Elevate your words to visuals. Powered by OpenAI Dall-E"
         icon={ImageIcon}
         iconColor="text-pink-700"
         bgColor="bg-pink-700/10"
@@ -166,7 +166,7 @@ const ImagePage = () => {
             </div>
           )}
           {images.length === 0 && !isLoading && (
-            <Empty label="No images generated" />
+            <Empty label="No images generated" src="/empty/image.svg" />
           )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-8">
             {images.map((src) => (

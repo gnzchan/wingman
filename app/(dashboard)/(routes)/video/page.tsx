@@ -59,7 +59,7 @@ const VideoPage = () => {
     <div>
       <Heading
         title="Video Generation"
-        description="Turn your prompt into video."
+        description="Give motion to your words."
         icon={VideoIcon}
         iconColor="text-orange-700"
         bgColor="bg-orange-700/10"
@@ -99,7 +99,9 @@ const VideoPage = () => {
               <Loader />
             </div>
           )}
-          {!video && !isLoading && <Empty label="No video generated" />}
+          {!video && !isLoading && (
+            <Empty label="No video generated" src="/empty/video.svg" />
+          )}
           {video && (
             <video
               controls
