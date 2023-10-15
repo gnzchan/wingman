@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Wingman",
-  description: "AI Platform",
+  description: "Free Imagination",
 };
 
 export default function RootLayout({
