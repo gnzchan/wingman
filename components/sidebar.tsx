@@ -86,7 +86,7 @@ const Sidebar: React.FC<SidebarProps> = ({ limitCount, isPro }) => {
               className={cn(
                 "text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-zinc-900 hover:bg-white/10 rounded-lg transition",
                 pathname === route.href
-                  ? "text-zinc-900 bg-white/10 font-semibold"
+                  ? "text-white bg-[#2a2a2a] font-semibold"
                   : "text-zinc-600"
               )}
             >
