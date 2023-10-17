@@ -76,7 +76,7 @@ const VideoPage = () => {
                 <FormItem className="col-span-12 lg:col-span-10">
                   <FormControl className="m-0 p-0">
                     <Input
-                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
+                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent md:text-base text-lg"
                       disabled={isLoading}
                       placeholder="Cat running around a field of dandelions"
                       {...field}
