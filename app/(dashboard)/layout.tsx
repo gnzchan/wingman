@@ -1,3 +1,5 @@
+import { currentUser } from "@clerk/nextjs";
+
 import Navbar from "@/components/navbar";
 import Sidebar from "@/components/sidebar";
 import { getApiLimitCount } from "@/lib/api-limit";
@@ -10,8 +12,9 @@ interface DashboardLayoutProps {
 const DashboardLayout: React.FC<DashboardLayoutProps> = async ({
   children,
 }) => {
-  const limitCount = await getApiLimitCount();
-  const isPro = await checkSubscription();
+  const user = await currentUser();
+  const limitCount = await getApiLimitCount(user?.id);
+  const isPro = await checkSubscription(user?.id);
 
   return (
     <>

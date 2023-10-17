@@ -1,12 +1,13 @@
-import { UserButton } from "@clerk/nextjs";
+import { UserButton, currentUser } from "@clerk/nextjs";
 
 import MobileSidebar from "@/components/mobile-sidebar";
 import { getApiLimitCount } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
 const Navbar = async () => {
-  const limitCount = await getApiLimitCount();
-  const isPro = await checkSubscription();
+  const user = await currentUser();
+  const limitCount = await getApiLimitCount(user?.id);
+  const isPro = await checkSubscription(user?.id);
 
   return (
     <div className="flex items-center p-4">

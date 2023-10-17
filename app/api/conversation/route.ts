@@ -1,9 +1,12 @@
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { OpenAIStream, StreamingTextResponse } from "ai";
 
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
+
+// export const runtime = "edge";
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -27,8 +30,8 @@ export async function POST(req: Request) {
       return new NextResponse("Messages are required", { status: 400 });
     }
 
-    const freeTrial = await checkApiLimit();
-    const isPro = await checkSubscription();
+    const freeTrial = await checkApiLimit(userId);
+    const isPro = await checkSubscription(userId);
 
     if (!freeTrial && !isPro) {
       return new NextResponse("Free attempts used already. Trial expired", {
@@ -39,13 +42,16 @@ export async function POST(req: Request) {
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
       messages,
+      stream: true,
     });
 
+    const stream = OpenAIStream(response);
+
     if (!isPro) {
-      await incrementApiLimit();
+      await incrementApiLimit(userId);
     }
 
-    return NextResponse.json(response.choices[0].message);
+    return new StreamingTextResponse(stream);
   } catch (error) {
     console.log("[CONVERSATION_ERROR]", error);
     return new NextResponse("Internal error", { status: 500 });

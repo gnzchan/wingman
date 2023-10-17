@@ -1,3 +1,4 @@
+import { currentUser } from "@clerk/nextjs";
 import { Settings } from "lucide-react";
 
 import Heading from "@/components/heading";
@@ -5,7 +6,8 @@ import SubscriptionButton from "@/components/subscription-button";
 import { checkSubscription } from "@/lib/subscription";
 
 const SettingsPage = async () => {
-  const isPro = await checkSubscription();
+  const user = await currentUser();
+  const isPro = await checkSubscription(user?.id);
 
   return (
     <div>
