@@ -15,6 +15,7 @@ import {
 
 import FreeCounter from "@/components/free-counter";
 import { cn } from "@/lib/utils";
+import { useSidebar } from "@/hooks/use-sidebar";
 
 const poppins = Poppins({ weight: "600", subsets: ["latin"] });
 
@@ -63,6 +64,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ limitCount, isPro }) => {
   const pathname = usePathname();
+  const { onClose } = useSidebar();
 
   return (
     <div className="space-y-4 py-4 flex flex-col h-full bg-gradient-to-b from-[#ffc93c] via-[#ffbb09] to-[#2a2a2a] text-white">
@@ -70,6 +72,7 @@ const Sidebar: React.FC<SidebarProps> = ({ limitCount, isPro }) => {
         <Link
           href="/dashboard"
           className="flex items-center pl-3 mb-14 justify-center"
+          onClick={onClose}
         >
           <div className="relative w-12 h-12">
             <Image fill alt="Wingman Logo" src="logo/wingman.svg" />
@@ -89,6 +92,7 @@ const Sidebar: React.FC<SidebarProps> = ({ limitCount, isPro }) => {
                   ? "text-white bg-[#2a2a2a] font-semibold"
                   : "text-zinc-600"
               )}
+              onClick={onClose}
             >
               <div className="flex items-center flex-1">
                 <route.icon className={cn("h-5 w-5 mr-3", route.color)} />
