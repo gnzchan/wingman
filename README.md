@@ -1,6 +1,4 @@
-<p align="center">
-  ![Logo](https://raw.githubusercontent.com/gnzchan/wingman/main/public/logo/banner_wingman.png)  
-</p>
+<p align="center"> ![Logo](https://raw.githubusercontent.com/gnzchan/wingman/main/public/logo/banner_wingman.png) </p>
 
 # Wingman
 
@@ -23,32 +21,33 @@ https://wingman-theta.vercel.app/
 
 Made using Next.js
 
-**Client:** React, TailwindCSS, Zod, Zustand
+**Client:**
+React, TailwindCSS, Zod, Zustand
 
 **Server:** Prisma, Clerk, Stripe
 
-<a href="https://www.typescriptlang.org/" target="blank">
-<img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" height="40" width="40" />
+<a href="https://www.typescriptlang.org/" target="blank"> 
+    <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" height="40" width="40" /> 
 </a>
-<a href="https://reactjs.org/" target="blank">
-<img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" height="40" width="40" />
-</a>
-<a href="https://www.w3schools.com/css/" target="blank">
-<img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="Css3" height="40" width="40" />
-</a>
-<a href="https://www.w3.org/html/" target="blank">
-<img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="Html5" height="40" width="40" />
-</a>
-<a href="https://tailwindcss.com/" target="blank">
-<img align="center" src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="TailWind" height="40" width="40" />
-</a>
-<a href="https://www.prisma.io/" target="blank">
-<img align="center" src="https://devicons.railway.app/i/prisma-dark.svg" alt="Prisma" height="40" width="40" />
-</a>
-<a href="https://git-scm.com/" target="blank">
-<img align="center" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" height="40" width="40" />
+<a href="https://reactjs.org/" target="blank"> 
+    <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="React" height="40" width="40" /> 
+</a> 
+<a href="https://www.w3schools.com/css/" target="blank"> 
+    <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="Css3" height="40" width="40" /> 
+</a> 
+<a href="https://www.w3.org/html/" target="blank"> 
+    <img align="center" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="Html5" height="40" width="40" /> 
+</a> 
+<a href="https://tailwindcss.com/" target="blank"> 
+    <img align="center" src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="TailWind" height="40" width="40" /> 
+</a> 
+<a href="https://www.prisma.io/" target="blank"> 
+    <img align="center" src="https://devicons.railway.app/i/prisma-dark.svg" alt="Prisma" height="40" width="40" /> 
+</a> 
+<a href="https://git-scm.com/" target="blank"> 
+    <img align="center" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" height="40" width="40" /> 
 </a>
 
 ## Post creation comments
 
-Doing this project was fun, I was amazed by how simple it was to integrate ready to use AI (made by others) to our web apps. I've learned a lot, spent also a lot just to have access to these AI models. Learning AI was worth it.     
+Doing this project was fun, I was amazed by how simple it was to integrate ready to use AI (made by others) to our web apps. I've learned a lot, spent also a lot just to have access to these AI models. Learning AI was worth it. NOTE: On deploment, some services may not work due to free tier limits.
