@@ -52,4 +52,7 @@ React, TailwindCSS, Zod, Zustand
 
 ## Post creation comments
 
-Doing this project was fun, I was amazed by how simple it was to integrate ready to use AI (made by others) to our web apps. I've learned a lot, spent also a lot just to have access to these AI models. Learning AI was worth it. NOTE: On deploment, some services may not work due to free tier limits.
+Doing this project was fun, I was amazed by how simple it was to integrate ready to use AI (made by others) to our web apps. I've learned a lot, spent also a lot just to have access to these AI models. Learning AI was worth it.
+<br>
+<br>
+NOTE: On deploment, some services may not work due to free tier limits.
