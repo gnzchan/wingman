@@ -1,5 +1,3 @@
-import { useUser } from "@clerk/nextjs";
-
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 interface UserAvatarProps {

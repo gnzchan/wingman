@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
@@ -41,6 +42,16 @@ const ConversationPage = () => {
       },
       onFinish: () => router.refresh(),
     });
+
+  const msgEnd = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    msgEnd.current?.scrollIntoView({
+      behavior: "auto",
+      block: "center",
+      inline: "center",
+    });
+  }, [messages]);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -108,6 +119,7 @@ const ConversationPage = () => {
                     ? "bg-white border border-black/10"
                     : "bg-muted"
                 )}
+                ref={messages.length - 1 === i ? msgEnd : undefined}
               >
                 {message.role === "user" ? (
                   <UserAvatar
