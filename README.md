@@ -1,4 +1,6 @@
-![Logo](https://raw.githubusercontent.com/gnzchan/wingman/main/public/logo/banner_wingman.png)
+<p align="center">
+  ![Logo](https://raw.githubusercontent.com/gnzchan/wingman/main/public/logo/banner_wingman.png)  
+</p>
 
 # Wingman
 
