@@ -6,35 +6,30 @@ import UserAvatar from "./user-avatar";
 const testimonials = [
   {
     name: "Jessa",
-    avatar: "J",
     title: "Data Scientist",
     description:
       "The AI app's data analysis capabilities are second to none. It's a must-have for professionals in my field.",
   },
   {
     name: "Corina",
-    avatar: "C",
     title: "Entrepreneur",
     description:
       "Managing my business is now a breeze, thanks to this remarkable AI app.",
   },
   {
     name: "Chas",
-    avatar: "C",
     title: "Medical Field",
     description:
       "My research process has been significantly streamlined with this AI app. It's an invaluable tool.",
   },
   {
     name: "Ryah",
-    avatar: "R",
     title: "Marketing Manager",
     description:
       "I can't believe how much time I've saved using this AI tool for market analysis. It's a true gem.",
   },
   {
     name: "Eudes",
-    avatar: "E",
     title: "ECG Technician",
     description:
       "It simplifies data analysis, improves accuracy, and enhances patient care. It's an essential tool for professionals in the field.",
@@ -52,7 +47,7 @@ const LandingContent = () => {
           <Card key={item.name} className="text-white bg-[#192339] border-none">
             <CardHeader>
               <CardTitle className="flex items-center gap-x-2">
-                <UserAvatar avatar={item.avatar} />
+                <UserAvatar avatar={item.name.charAt(0)} />
                 <div>
                   <p className="text-lg">{item.name}</p>
                   <p className="text-zinc-400 text-sm">{item.title}</p>

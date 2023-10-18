@@ -3,6 +3,7 @@
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { useUser } from "@clerk/nextjs";
 import * as z from "zod";
 import { MessageSquare } from "lucide-react";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -13,7 +14,7 @@ import BotAvatar from "@/components/bot-avatar";
 import Loader from "@/components/loader";
 import Empty from "@/components/empty";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useProModal } from "@/hooks/use-pro-modal";
@@ -23,6 +24,7 @@ import { formSchema } from "./constants";
 
 const ConversationPage = () => {
   const router = useRouter();
+  const { user } = useUser();
   const { onOpen } = useProModal();
   const { messages, input, isLoading, handleInputChange, handleSubmit } =
     useChat({
@@ -60,15 +62,15 @@ const ConversationPage = () => {
         <Form {...form}>
           <form
             onSubmit={handleSubmit}
-            className="rounded-lg border w-full p-4 px-3 md:px-6 focus-within:shadown-sm grid grid-cols-12 gap-2"
+            className="rounded-lg border w-full p-4 px-3 md:px-6 focus-within:shadown-sm grid grid-cols-12 gap-2 items-center"
           >
             <FormField
               name="prompt"
               render={({ field }) => (
                 <FormItem className="col-span-12 lg:col-span-10">
                   <FormControl className="m-0 p-0">
-                    <Input
-                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent md:text-base text-lg"
+                    <Textarea
+                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent md:text-base text-lg resize-none"
                       disabled={isLoading}
                       placeholder="How do I calculate the radius of a circle?"
                       {...field}
@@ -107,7 +109,14 @@ const ConversationPage = () => {
                     : "bg-muted"
                 )}
               >
-                {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
+                {message.role === "user" ? (
+                  <UserAvatar
+                    imageUrl={user?.imageUrl}
+                    avatar={user?.firstName?.charAt(0)}
+                  />
+                ) : (
+                  <BotAvatar />
+                )}
                 <p className="text-sm">{message.content}</p>
               </div>
             ))}

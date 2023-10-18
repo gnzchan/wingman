@@ -15,7 +15,7 @@ import Loader from "@/components/loader";
 import Empty from "@/components/empty";
 import { Card, CardFooter } from "@/components/ui/card";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import {
   Select,
   SelectContent,
@@ -38,7 +38,7 @@ const ImagePage = () => {
     defaultValues: {
       prompt: "",
       amount: "1",
-      resolution: "512x512",
+      resolution: "256x256",
     },
   });
 
@@ -80,15 +80,15 @@ const ImagePage = () => {
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
-            className="rounded-lg border w-full p-4 px-3 md:px-6 focus-within:shadown-sm grid grid-cols-12 gap-2"
+            className="rounded-lg border w-full p-4 px-3 md:px-6 focus-within:shadown-sm grid grid-cols-12 gap-2 items-center"
           >
             <FormField
               name="prompt"
               render={({ field }) => (
                 <FormItem className="col-span-12 lg:col-span-6">
                   <FormControl className="m-0 p-0">
-                    <Input
-                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent md:text-base text-lg"
+                    <Textarea
+                      className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent md:text-base text-lg resize-none"
                       disabled={isLoading}
                       placeholder="A cat chasing a dragon"
                       {...field}
