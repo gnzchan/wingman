@@ -12,6 +12,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Wingman",
   description: "Free Imagination",
+  appleWebApp: true,
 };
 
 export default function RootLayout({
