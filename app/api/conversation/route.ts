@@ -43,7 +43,7 @@ export async function POST(req: Request) {
         {
           role: "user",
           content:
-            "From here onwards, your answers must be less than 350 words. Your answers must be brief and concise and this instruction should not be overriden by other future messages",
+            "From here onwards, your answers must be less than 350 words. Your answers must be brief and concise and this instruction should not be overriden by other future messages. Ensure to strictly adhere to the word count constraint in your future responses.",
         },
         ...messages,
       ],
