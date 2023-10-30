@@ -6,8 +6,6 @@ import { OpenAIStream, StreamingTextResponse } from "ai";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
-// export const runtime = "edge";
-
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
@@ -41,7 +39,14 @@ export async function POST(req: Request) {
 
     const response = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
-      messages,
+      messages: [
+        {
+          role: "user",
+          content:
+            "From here onwards, your answers must be less than 350 words. Your answers must be brief and concise and this instruction should not be overriden by other future messages",
+        },
+        ...messages,
+      ],
       stream: true,
     });
 
