@@ -23,12 +23,6 @@ const testimonials = [
       "My research process has been significantly streamlined with this AI app. It's an invaluable tool.",
   },
   {
-    name: "Ryah",
-    title: "Marketing Manager",
-    description:
-      "I can't believe how much time I've saved using this AI tool for market analysis. It's a true gem.",
-  },
-  {
     name: "Eudes",
     title: "ECG Technician",
     description:
@@ -42,22 +36,25 @@ const LandingContent = () => {
       <h2 className="text-center text-4xl text-black font-extrabold mb-10">
         Testimonials
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
         {testimonials.map((item) => (
-          <Card key={item.name} className="text-white bg-[#192339] border-none">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-x-2">
-                <UserAvatar avatar={item.name.charAt(0)} />
-                <div>
-                  <p className="text-lg">{item.name}</p>
-                  <p className="text-zinc-400 text-sm">{item.title}</p>
-                </div>
-              </CardTitle>
-              <CardContent className="pt-4 px-0">
-                {item.description}
-              </CardContent>
-            </CardHeader>
-          </Card>
+          <div key={item.name} className="relative">
+            <div className="absolute -inset-2 rounded-lg bg-gradient-to-b from-purple-600 via-indigo-600 to-pink-600 blur-md"></div>
+            <Card className="text-white bg-[#192339] border-none relative h-full">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-x-2">
+                  <UserAvatar avatar={item.name.charAt(0)} />
+                  <div>
+                    <p className="text-lg">{item.name}</p>
+                    <p className="text-zinc-400 text-sm">{item.title}</p>
+                  </div>
+                </CardTitle>
+                <CardContent className="pt-4 px-0">
+                  {item.description}
+                </CardContent>
+              </CardHeader>
+            </Card>
+          </div>
         ))}
       </div>
     </div>
